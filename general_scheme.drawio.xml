@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="j7WN7nTvFwrAzMQLBcAu">
+    <mxGraphModel dx="911" dy="532" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="jHriFNbkorJcUS8dB6Bx-12" edge="1" parent="1" source="jHriFNbkorJcUS8dB6Bx-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="jHriFNbkorJcUS8dB6Bx-11" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jHriFNbkorJcUS8dB6Bx-9" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;Experimental&lt;/div&gt;" vertex="1">
+          <mxGeometry height="210" width="130" x="120" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="jHriFNbkorJcUS8dB6Bx-15" edge="1" parent="1" source="jHriFNbkorJcUS8dB6Bx-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="jHriFNbkorJcUS8dB6Bx-14" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jHriFNbkorJcUS8dB6Bx-11" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;Model converter&lt;/div&gt;" vertex="1">
+          <mxGeometry height="210" width="130" x="420" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="jHriFNbkorJcUS8dB6Bx-13" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Модель" vertex="1">
+          <mxGeometry height="30" width="60" x="310" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="jHriFNbkorJcUS8dB6Bx-18" edge="1" parent="1" source="jHriFNbkorJcUS8dB6Bx-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1050" y="224.9999999999999" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jHriFNbkorJcUS8dB6Bx-14" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;Embedded wrapper&lt;/div&gt;" vertex="1">
+          <mxGeometry height="210" width="130" x="740" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="jHriFNbkorJcUS8dB6Bx-16" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Веса и правила" vertex="1">
+          <mxGeometry height="30" width="150" x="570" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="jHriFNbkorJcUS8dB6Bx-19" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Camera driver" vertex="1">
+          <mxGeometry height="50" width="105" x="752.5" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="jHriFNbkorJcUS8dB6Bx-20" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Результат бинарной классификации" vertex="1">
+          <mxGeometry height="100" width="130" x="910" y="150" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
