@@ -1,0 +1,26 @@
+{
+  "dense1": {
+    "inputs": [
+      "input"
+    ],
+    "type": "dense",
+    "shape": [
+      196,
+      64
+    ],
+    "bias": true,
+    "nonlinearity": "relu"
+  },
+  "dense2": {
+    "inputs": [
+      "dense1"
+    ],
+    "type": "dense",
+    "shape": [
+      64,
+      1
+    ],
+    "bias": true,
+    "nonlinearity": "sigmoid"
+  }
+}
