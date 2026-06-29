@@ -20,7 +20,7 @@ public:
 
 class GPIO_port : IPeriphery {
 	const char port_;
-	uint8_t pin_state_;
+	__IO uint16_t pin_state_;
 public:
 	GPIO_port (const char port_) : port_(port_) {
 		this->pin_state_ = 0;
@@ -38,11 +38,11 @@ public:
 		if ((pin_number >= 0) && (pin_number < 16)) {
 			if (pin_state_ & (1 << pin_number)) {
 				pin_state_ &= ~(1 << pin_number);
-				GPIOB->BSRR = 1 << pin_number;
+				GPIOB->BSRR = 1 << (pin_number + 16);
 			}
 			else {
 				pin_state_ |= (1 << pin_number);
-				GPIOB->BSRR = 1 << (pin_number + 16);
+				GPIOB->BSRR = 1 << pin_number;
 			}
 		}
 	}

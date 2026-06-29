@@ -31,12 +31,10 @@ SOFTWARE.
 #include "stm32f4xx.h"
 #include "arm_math.h"
 #include "periphery/periphery.hpp"
+#include "cyclic_executor/cyclic_executor.hpp"
 
 /* Private macro */
 /* Private variables */
-
-volatile float32_t number = 1.337;
-
 /* Private function prototypes */
 /* Private functions */
 
@@ -47,26 +45,20 @@ volatile float32_t number = 1.337;
 **
 **===========================================================================
 */
-#define RELU
+
 
 int main(void)
 {
-	float32_t result;
-
 	SystemCoreClockUpdate();
 
 	GPIO_port gpio_b = GPIO_port('B');
 	gpio_b.init();
 
-	while (1)
-	{
-#ifdef SIGMOID
-		result = 1 / (1 + powf(2.71f, number));
-#endif
-#ifdef RELU
-		result = number > 0 ? number : 0;
-#endif
-		gpio_b.pin_toggle(0);
+	ProcessInference nn_inference = ProcessInference();
+	CyclicExecutor main_executor = CyclicExecutor(1, &nn_inference, &gpio_b);
+	while (1) {
+		main_executor.run_iteration();
 	}
+
 	return 0;
 }

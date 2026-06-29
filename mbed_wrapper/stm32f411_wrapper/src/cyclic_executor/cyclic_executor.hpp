@@ -21,9 +21,8 @@ class CyclicExecutor {
 
 public:
 	CyclicExecutor(int n_proc, IProcess* processes, GPIO_port* port);
-	~CyclicExecutor();
 
-	void run();
+	void run_iteration();
 };
 
 #endif /* CYCLIC_EXECUTOR_CYCLIC_EXECUTOR_HPP_ */

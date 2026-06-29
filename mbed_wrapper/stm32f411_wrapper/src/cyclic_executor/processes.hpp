@@ -15,4 +15,11 @@ public:
 	virtual void run() = 0;
 };
 
+class ProcessInference : public IProcess {
+	float nn_output; 
+public:
+	ProcessInference();
+	void run() override;
+};
+
 #endif /* CYCLIC_EXECUTOR_PROCESSES_HPP_ */
