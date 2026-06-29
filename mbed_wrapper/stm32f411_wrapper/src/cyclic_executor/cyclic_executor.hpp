@@ -14,13 +14,13 @@
 class CyclicExecutor {
 	int n_proc;
 	IProcess* processes;
-	GPIO_port* port;
+	GPIO_Port* port;
 
 	void start_measure_(int proc_number);
 	void end_measure_(int proc_number);
 
 public:
-	CyclicExecutor(int n_proc, IProcess* processes, GPIO_port* port);
+	CyclicExecutor(int n_proc, IProcess* processes, GPIO_Port* port);
 
 	void run_iteration();
 };

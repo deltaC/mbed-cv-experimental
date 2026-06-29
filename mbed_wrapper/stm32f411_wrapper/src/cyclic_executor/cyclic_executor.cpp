@@ -11,7 +11,7 @@
 
 CyclicExecutor::CyclicExecutor(	int n_proc,
 								IProcess* processes,
-								GPIO_port* port ) : n_proc(n_proc), processes(processes), port(port) {}
+								GPIO_Port* port ) : n_proc(n_proc), processes(processes), port(port) {}
 
 void CyclicExecutor::start_measure_(int proc_number) {
 	this->port->pin_toggle(proc_number);

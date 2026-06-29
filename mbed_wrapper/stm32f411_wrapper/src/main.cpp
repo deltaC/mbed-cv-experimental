@@ -51,7 +51,7 @@ int main(void)
 {
 	SystemCoreClockUpdate();
 
-	GPIO_port gpio_b = GPIO_port('B');
+	GPIO_Port gpio_b = GPIO_Port('B');
 	gpio_b.init();
 
 	ProcessInference nn_inference = ProcessInference();
