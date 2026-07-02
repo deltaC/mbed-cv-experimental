@@ -54,10 +54,14 @@ int main(void)
 	GPIO_Port gpio_b = GPIO_Port('B');
 	gpio_b.init();
 
+	TIM1_ClkGen cam_xclkgen = TIM1_ClkGen(0, 0, 3);
+	cam_xclkgen.init();
+	cam_xclkgen.start();
+
 	ProcessInference nn_inference = ProcessInference();
 	CyclicExecutor main_executor = CyclicExecutor(1, &nn_inference, &gpio_b);
 	while (1) {
-		main_executor.run_iteration();
+		main_executor.runIteration();
 	}
 
 	return 0;

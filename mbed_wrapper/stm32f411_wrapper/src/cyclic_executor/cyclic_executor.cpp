@@ -13,19 +13,19 @@ CyclicExecutor::CyclicExecutor(	int n_proc,
 								IProcess* processes,
 								GPIO_Port* port ) : n_proc(n_proc), processes(processes), port(port) {}
 
-void CyclicExecutor::start_measure_(int proc_number) {
-	this->port->pin_toggle(proc_number);
+void CyclicExecutor::startMeasure_(int proc_number) {
+	this->port->pinToggle(proc_number);
 }
 
-void CyclicExecutor::end_measure_(int proc_number) {
-	this->port->pin_toggle(proc_number);
+void CyclicExecutor::endMeasure_(int proc_number) {
+	this->port->pinToggle(proc_number);
 }
 
-void CyclicExecutor::run_iteration() {
+void CyclicExecutor::runIteration() {
 	for (int i = 0; i < this->n_proc; ++i) {
-		this->start_measure_(i);
+		this->startMeasure_(i);
 		this->processes[i].run();
-		this->end_measure_(i);
+		this->endMeasure_(i);
 		for (int j = 0; j < 1000; ++j)
 			asm("nop");
 	}

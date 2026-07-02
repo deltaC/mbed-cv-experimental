@@ -28,7 +28,7 @@ int GPIO_Port::init() {
 	return 1;
 }
 
-int GPIO_Port::pin_toggle(int pin_number) {
+int GPIO_Port::pinToggle(const int pin_number) {
 	if ((pin_number >= 0) && (pin_number < 16) && (port_ == 'B')) {
 		if (*(this->pin_state_) & (1 << pin_number)) {
 			GPIOB->BSRR = 1 << (pin_number + 16);

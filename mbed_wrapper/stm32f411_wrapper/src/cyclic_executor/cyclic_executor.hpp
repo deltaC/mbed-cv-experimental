@@ -16,13 +16,13 @@ class CyclicExecutor {
 	IProcess* processes;
 	GPIO_Port* port;
 
-	void start_measure_(int proc_number);
-	void end_measure_(int proc_number);
+	void startMeasure_(int proc_number);
+	void endMeasure_(int proc_number);
 
 public:
 	CyclicExecutor(int n_proc, IProcess* processes, GPIO_Port* port);
 
-	void run_iteration();
+	void runIteration();
 };
 
 #endif /* CYCLIC_EXECUTOR_CYCLIC_EXECUTOR_HPP_ */
