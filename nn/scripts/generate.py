@@ -4,15 +4,23 @@ GENERATION
 from act_funcs import *
 from layers import *
 from weights import *
+from inference import *
 
 
-def generate_rules_h(model_arch: dict)->str:
-  rules_h = "//    RULES_H     //\n\n"
-  rules_h += "#ifndef RULES_H\n"
-  rules_h += "#define RULES_H\n\n"
-  rules_h += '#include "math.h"\n\n'
-  
+def generate_net_h(model_arch: dict, weights)->str:
+  net_h = "//     NET_H     //\n\n"
+  net_h += "#ifndef NET_H\n"
+  net_h += "#define NET_H\n\n"
+  net_h += '#include "math.h"\n'
+  net_h += '#include "stdint.h"\n\n'
 
+
+  net_h += "/// PARAMETERS\n\n"  
+  for weight in weights.keys():
+    net_h += add_weight(weight, weights[weight])
+
+
+  net_h += "/// RULES"
   # find all unique activation functions
   presented_activation_functions: list[str] = []
   for layer_name in model_arch.keys():
@@ -29,44 +37,21 @@ def generate_rules_h(model_arch: dict)->str:
 
   # add activation functions
   for activation_function in presented_activation_functions:
-    rules_h += add_activation_function(activation_function)
+    net_h += add_activation_function(activation_function)
 
   # add layers
   for layer in presented_layers:
-    rules_h += add_layer(layer)
-
-  rules_h += "\n#endif // RULES_H\n"
-
-    
-  return rules_h
+    net_h += add_layer(layer)
 
 
-def generate_weights_h(weights)->str:
-  weights_h = "//     WEIGHTS_H     //\n\n"
-  weights_h += "#ifndef WEIGHTS_H\n"
-  weights_h += "#define WEIGHTS_H\n\n"
+  net_h += "/// INFERENCE"
+  # initialize memory buffer
+  # net_h += add_memory_buffer(model_arch)
 
-  for key in weights.keys():
-    weights_h += add_weight(key, weights[key])
+  # write layer settings
+  # TODO
 
-  weights_h += "#endif // WEIGHTS_H\n"
-
-  return weights_h
-
-
-def generate_net_h(model_arch: str, rules_path: str, weights_path: str)->str:
-  net_h = "//     NET_H     //\n\n"
-  net_h += "#ifndef NET_H\n"
-  net_h += "#define NET_H\n\n"
-
-  # add parameters
-
-  # TODO: create membuf
-
-  # adopt rules
-
-
-
+  # net_h += add_inference()
 
 
   net_h += "#endif // NET_H\n"

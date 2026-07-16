@@ -1,0 +1,156 @@
+{
+  "conv_bl_1_1": {
+    "inputs": [
+      "input"
+    ],
+    "type": "conv",
+    "shape": [
+      4,
+      1,
+      3,
+      3
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "paddings": [
+      1,
+      1
+    ],
+    "bias": true,
+    "nonlinearity": "relu"
+  },
+  "conv_bl_1_2": {
+    "inputs": [
+      "conv_bl_1_1"
+    ],
+    "type": "conv",
+    "shape": [
+      4,
+      4,
+      2,
+      2
+    ],
+    "strides": [
+      2,
+      2
+    ],
+    "paddings": [
+      0,
+      0
+    ],
+    "bias": true,
+    "nonlinearity": "relu"
+  },
+  "conv_bl_2_1": {
+    "inputs": [
+      "conv_bl_1_2"
+    ],
+    "type": "conv",
+    "shape": [
+      8,
+      4,
+      3,
+      3
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "paddings": [
+      1,
+      1
+    ],
+    "bias": true,
+    "nonlinearity": "relu"
+  },
+  "conv_bl_2_2": {
+    "inputs": [
+      "conv_bl_2_1"
+    ],
+    "type": "conv",
+    "shape": [
+      8,
+      8,
+      2,
+      2
+    ],
+    "strides": [
+      2,
+      2
+    ],
+    "paddings": [
+      0,
+      0
+    ],
+    "bias": true,
+    "nonlinearity": "relu"
+  },
+  "conv_bl_3_1": {
+    "inputs": [
+      "conv_bl_2_2"
+    ],
+    "type": "conv",
+    "shape": [
+      12,
+      8,
+      3,
+      3
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "paddings": [
+      1,
+      1
+    ],
+    "bias": true,
+    "nonlinearity": "relu"
+  },
+  "conv_bl_3_2": {
+    "inputs": [
+      "conv_bl_3_1"
+    ],
+    "type": "conv",
+    "shape": [
+      12,
+      12,
+      2,
+      2
+    ],
+    "strides": [
+      2,
+      2
+    ],
+    "paddings": [
+      0,
+      0
+    ],
+    "bias": true,
+    "nonlinearity": "relu"
+  },
+  "conb_bl_4_1": {
+    "inputs": [
+      "conv_bl_3_2"
+    ],
+    "type": "conv",
+    "shape": [
+      1,
+      12,
+      2,
+      2
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "paddings": [
+      0,
+      0
+    ],
+    "bias": true,
+    "nonlinearity": "sigmoid"
+  }
+}
